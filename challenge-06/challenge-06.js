@@ -6,7 +6,7 @@ e imprima o nome desse campeonato no console.
 */
 var championship = 'Paulistão';
 console.log(championship);
-console.log()
+console.log();
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -17,7 +17,7 @@ desafio.
 var teams = ['Corinthians', 'Bragantino', 'RedBull', 'Guarani', 'Ponte Preta'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
-console.log()
+console.log();
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -36,14 +36,15 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(num) {
-    if(num < 5) {
-        return 'O time que está em ' + num + 'º lugar é o ' + teams[num] + '.';
-    } else {
-        return 'Não temos a informação do time que está nessa posição.'
-    }
+    if(num < 1 || num > 5) {
+        return 'Não temos a informação do time que está nessa posição.';
+    } 
+    
+    return 'O time que está em ' + num + 'º lugar é o ' + teams[num - 1] + '.';
+    
 }
-console.log(showTeamPosition(0))
-console.log()
+console.log(showTeamPosition(0));
+console.log();
 
 
 
@@ -51,18 +52,22 @@ console.log()
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
-
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(5));
+console.log(showTeamPosition(10));
+console.log(showTeamPosition(0));
+console.log();
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-console.log(showTeamPosition(0))
-console.log(showTeamPosition(3))
-console.log(showTeamPosition(4))
-console.log(showTeamPosition(2))
-console.log(showTeamPosition(10))
-console.log()
+var count = 20;
+while( count <= 30 ) {
+    console.log(count++);
+}
+console.log();
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -77,31 +82,35 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(cor) {
+    var hexa;
     switch(cor) {
         case 'black':
-            return 'O hexadecimal para a cor ' + cor + ' é #000000' + '.';
+            hexa = '#000000'; 
             break;
         case 'blue':
-            return 'O hexadecimal para a cor ' + cor + ' é #0000FF' + '.';
+            hexa = '#0000FF';
             break;
         case 'green':
-            return 'O hexadecimal para a cor ' + cor + ' é #008000' + '.';
+            hexa = '#008000';
             break;
         case 'lime':
-            return 'O hexadecimal para a cor ' + cor + ' é #00FF00' + '.';
+            hexa = '#00FF00';
             break;
         case 'purple':
-            return 'O hexadecimal para a cor ' + cor + ' é #A020F0' + '.';
+            hexa = '#A020F0';
             break;
         default:
             return 'Não temos o equivalente hexadecimal para ' + cor + '.';
     }
+    return 'O hexadecimal para a cor ' + cor + ' é ' + hexa + '.';
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-console.log(convertToHex('purple'))
-console.log(convertToHex('black'))
-console.log(convertToHex('lime'))
-console.log(convertToHex('green'))
+console.log(convertToHex('purple'));
+console.log(convertToHex('black'));
+console.log(convertToHex('lime'));
+console.log(convertToHex('green'));
+console.log(convertToHex('white'));
+
