@@ -1,32 +1,58 @@
-
-
-function sum() {
-    return 1 + 2;
-}
-console.log(sum());
-
-
-var sum2 = function() {
-    return 3 + 2;
+operation = {
+    '+': function(n1, n2) {return n1 + n2;},
+    '-': function(n1, n2) {return n1 - n2;},
+    '*': function(n1, n2) {return n1 * n2;},
+    '/': function(n1, n2) {return n1 / n2;},
+    '%': function(n1, n2) {return n1 % n2;},
 };
-console.log(sum2());
 
-var sum3 = function otherSum() {
-    return 5 + 8;
-};
-console.log(sum3());
-console.log(sum3.name);
-console.log();
 
-let obj = {
-    prop1: function() {return 1 + 2;},
-    prop2: function() {return 10 + 10;}
+function isOperatorValid(param) {
+    param === '+' || param === '-' || param === '*' || param === '/' || param === '%' ? param = true : param = false
+    return param;
 }
-console.log(obj.prop2());
+
+function calculator(operador) {
+    if(isOperatorValid(operador) === false) {
+        return false
+    } else {
+        return function(p1, p2) {
+            if(typeof p1 !== 'number' || typeof p2 !== 'number'){
+                return false;
+            }
+            return operation[operador](p1, p2);
+        }
+    }
+}
 
 
-(function() {
-    console.log(5 + 5);
-})();
+
+function showOperationMessage(number1, operator, number2) {
+    return 'A operação ' + number1 + ' ' + operator + ' ' + number2 + ' = ';
+}
+
+function showErrorMessage(param) {
+    if(calculator(param) === 'false') {
+        return 'Oparação ' + param + ' não permitida!';
+    } 
+}
+
+let number1 = 0;
+let number2 = 0;
+let operationSignal;
+
+operationSignal = 'oi';
+let sum = calculator(operationSignal)
 
 
+number1 = 5
+number2 = 10
+//console.log(sum(number1, number2))
+console.log(showOperationMessage(number1, operationSignal, number2), sum(number1, number2))
+
+console.log(isOperatorValid(operationSignal))
+//console.log(calculator('b')(5, 10))
+
+// if(isOperatorValid(operationSignal) === 'false') {
+//     console.log('falso')
+// }
