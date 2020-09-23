@@ -1,114 +1,115 @@
 (function() {
-/*
-Envolva todo o conteúdo desse arquivo em uma IIFE.
-*/
+    /*
+    Envolva todo o conteúdo desse arquivo em uma IIFE.
+    */
 
-/*
-Crie um objeto chamado `person`, com as propriedades:
+    /*
+    Crie um objeto chamado `person`, com as propriedades:
+        `name`: String
+        `lastname`: String
+        `age`: Number
+    Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
+    de valor para cada propriedade.
+    */
+    let person = {
+        name: 'William',
+        lastname: 'Matos',
+        age: 35
+    };
+    console.log( 'Propriedades de "person":');
+
+    /*
+    Mostre no console, em um array, todas as propriedades do objeto acima.
+    Não use nenhuma estrutura de repetição, nem crie o array manualmente.
+    */
+    console.log(Object.keys(person));
+
+    /*
+    Crie um array vazio chamado `bookss`.
+    */
+    let books = [];
+
+    /*
+    Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
+    seguintes propriedades:
     `name`: String
-    `lastname`: String
-    `age`: Number
-Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
-de valor para cada propriedade.
-*/
-let person = {
-    nome: 'William',
-    lastname: 'Matos',
-    age: 35
-};
-console.log( 'Propriedades de "person":');
+    `pages`: Number
+    */
+    books.push({name: 'Harry Potter', pages: 200})
+    books.push({name: 'Game Of Thrones', pages: 750})
+    books.push({name: 'Lord of the Rings', pages: 825})
+    console.log( '\nLista de livros:' );
 
-/*
-Mostre no console, em um array, todas as propriedades do objeto acima.
-Não use nenhuma estrutura de repetição, nem crie o array manualmente.
-*/
-console.log(Object.keys(person));
+    /*
+    Mostre no console todos os livros.
+    */
+    console.log(books);
 
-/*
-Crie um array vazio chamado `books`.
-*/
-let book = [];
+    console.log( '\nLivro que está sendo removido:' );
+    /*
+    Remova o último livro, e mostre-o no console.
+    */
+    console.log(books.pop());
 
-/*
-Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
-seguintes propriedades:
-`name`: String
-`pages`: Number
-*/
-book.push({nome: 'Harry Potter', pages: 200})
-book.push({nome: 'Game Of Thrones', pages: 750})
-book.push({nome: 'Lord of the Rings', pages: 825})
-console.log( '\nLista de livros:' );
+    console.log( '\nAgora sobraram somente os livros:' );
+    
+    /*
+    Mostre no console os livros restantes.
+    */
+    console.log(books);
 
-/*
-Mostre no console todos os livros.
-*/
-console.log(book);
+    /*
+    Converta os objetos que ficaram em `bookss` para strings.
+    */
+    books = JSON.stringify(books);
+    console.log( '\nLivros em formato string:' );
 
-console.log( '\nLivro que está sendo removido:' );
-/*
-Remova o último livro, e mostre-o no console.
-*/
-book.pop();
+    /*
+    Mostre os livros nesse formato no console:
+    */
+    console.log(books);
 
-console.log( '\nAgora sobraram somente os livros:' );
-/*
-Mostre no console os livros restantes.
-*/
-console.log(book);
+    /*
+    Converta os livros novamente para objeto.
+    */
+    books = JSON.parse(books);
+    console.log( '\nAgora os livros são objetos novamente:' );
 
-/*
-Converta os objetos que ficaram em `books` para strings.
-*/
-book = JSON.stringify(book);
-console.log( '\nLivros em formato string:' );
+    /*
+    Mostre no console todas as propriedades e valores de todos os livros,
+    no formato abaixo:
+        "[PROPRIEDADE]: [VALOR]"
+    */
 
-/*
-Mostre os livros nesse formato no console:
-*/
-console.log(book);
-
-/*
-Converta os livros novamente para objeto.
-*/
-book = JSON.parse(book);
-console.log( '\nAgora os livros são objetos novamente:' );
-
-/*
-Mostre no console todas as propriedades e valores de todos os livros,
-no formato abaixo:
-    "[PROPRIEDADE]: [VALOR]"
-*/
-
-for(let i = 0; i < book.length; i++) {
-    for(let j in book[i]) {
-        console.log(j + ': ' + book[i][j]);
+    for(let i = 0; i < books.length; i++) {
+        for(let j in books[i]) {
+            console.log(j + ': ' + books[i][j]);
+        }
     }
-}
 
-/*
-Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
-seu nome. Adicione seu nome completo no array.
-*/
-let myName = ['w', 'i', 'l', 'l', 'i', 'a', 'm'];
-console.log( '\nMeu nome é:' );
+    /*
+    Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
+    seu name. Adicione seu name completo no array.
+    */
+    let myName = ['w', 'i', 'l', 'l', 'i', 'a', 'm'];
+    console.log( '\nMeu name é:' );
 
-/*
-Juntando todos os itens do array, mostre no console seu nome.
-*/
-console.log(myName.join(''));
+    /*
+    Juntando todos os itens do array, mostre no console seu name.
+    */
+    console.log(myName.join(''));
 
-console.log( '\nMeu nome invertido é:' );
+    console.log( '\nMeu name invertido é:' );
 
-/*
-Ainda usando o objeto acima, mostre no console seu nome invertido.
-*/
-console.log(myName.reverse().join(''));
+    /*
+    Ainda usando o objeto acima, mostre no console seu name invertido.
+    */
+    console.log(myName.reverse().join(''));
 
-console.log( '\nAgora em ordem alfabética:' );
-/*
-Mostre todos os itens do array acima, odenados alfabéticamente.
-*/
-console.log(myName.sort().join(''));
+    console.log( '\nAgora em ordem alfabética:' );
+    /*
+    Mostre todos os itens do array acima, odenados alfabéticamente.
+    */
+    console.log(myName.sort().join(''));
 
 })();
