@@ -8,8 +8,8 @@
     usando o método visto na aula 13.
     */
     console.log( 'O array em formato de string é:' );
-    let arr = [1, 2, 3, 4, 5, 6, 7];
-    console.log(arr.toString());
+    
+    console.log([1, 2, 3, 4, 5, 6, 7].toString());
 
     /*
     Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
@@ -62,7 +62,17 @@
     /*
     Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
     */
-    let nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Pernambuco'];
+    let nordeste = [
+        'Alagoas',
+        'Bahia', 
+        'Ceará', 
+        'Maranhão',
+        'Paraíba',
+        'Pernambuco',
+        'Piauí',
+        'Rio Grande do Norte',
+        'Sergipe'
+    ];
 
     /*
     Mostre no console os estados do nordeste.
@@ -103,7 +113,7 @@
     */
     let newBrasil = [];
     brasil.forEach(function(item, index) {
-        return newBrasil.push({id: index, estado: item});
+        newBrasil.push({id: index, estado: item});
     });
 
     /*
@@ -126,7 +136,11 @@
         return item.length > 7;
     });
     
-    every ? console.log('Sim, todos os estados tem mais de 7 letras!') : console.log('Nem todos os estados tem mais de 7 letras!');
+    console.log(
+        every
+        ? 'Sim, todos os estados tem mais de 7 letras!' 
+        : 'Nem todos os estados tem mais de 7 letras!'
+        );
 
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -142,7 +156,11 @@
 
     });
 
-    some ? console.log('Ceará está incluído!') : console.log('Ceará não foi incluído');
+    console.log(
+        some
+        ? 'Ceará está incluído!'
+        : 'Ceará não foi incluído'
+        );
     
 
     /*
@@ -152,9 +170,10 @@
     Atribua o novo array a uma variável chamada `map`.
     */
     let map = newBrasil.map(function(item) {
-        let id = item.id + 1;
-        let estado = item.estado + ' pertence ao Brasil';
-        return {id: id, estado: estado};
+        return {
+            id: item.id + 1,
+            estado: item.estado + ' pertence ao Brasil'
+        };
     });
 
     /*
@@ -168,7 +187,7 @@
     ID par. Atribua o valor à uma variável chamada `filter`.
     */
     let filter = map.filter(function(item) {
-        return(item.id % 2 == 0);
+        return item.id % 2 == 0;
     });
 
     /*
