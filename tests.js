@@ -116,6 +116,7 @@ let filter = arr.filter(function(item, index, array) {
 console.log(filter)
 */
 
+/*
 // MAP E FILTER JUNTOS
 let arr = [1, 2, 3, 4, 5];
 
@@ -125,3 +126,59 @@ let double = arr.map(function(item) {
     return item > 13;  // mostra só items maiores que 13
 });
 console.log(double)
+*/
+
+/*
+// reduce()
+// O zero no final é o valor inicial do acumulado (não é obrigatorio nesse caso)
+// O acumador é um acumulador que vai somando com cada item do array.
+let arr = [1, 2, 3, 4, 5];
+let reduce = arr.reduce(function(acumulado, atual, index, array) {
+    return acumulado + atual;
+}, 0);
+
+console.log(reduce)
+
+// reduce() com strings (nesse caso o zero no final não se aplica)
+let arr2 = ['W', 'i', 'l', 'l', 'i', 'a', 'm'];
+reduce2 = arr2.reduce(function(acumulado, atual, index, array) {
+    return acumulado + atual
+})
+console.log(reduce2)
+
+// A diferença entre o reduce() com map() e o every() é o os dois ultimos
+// retornam um boolean.
+*/
+
+/*
+// reduceRight() - O mesmo que o reduce() mas da esquerda para direita
+let arr = ['W', 'i', 'l', 'l', 'i', 'a', 'm'];
+var reduceRight = arr.reduceRight(function(acumulado, atual, index, array) {
+    return acumulado + atual;
+})
+console.log(reduceRight)
+*/
+
+/*
+// indexOf() - Busca por valor no array e retorna seu indice.
+// se o indice não existir, retorna -1
+// Bom para fazer verificações
+// aceita parametro para o inicio da busca.
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.indexOf(5)) // retorna o 4 que é o indice do valor 5.
+
+
+// lastIndexOf() - Procura de traz para frente
+let arr = [1, 2, 3, 5, 5, 5, 5, 5];
+console.log(arr.lastIndexOf(5)) // 7 (pq ele para na primeira ocorrencia )
+console.log(arr.indexOf(5)) // 3 (pq ele para na primeira ocorrencia)
+*/
+
+/*
+// Array.isArray() - returna boolean se for um array.
+// Lembre-se que o typeOf() retorna "object" para arrays.
+let arr = [1, 2, 3, 4, 5]
+console.log(Array.isArray(arr)) // true
+console.log(Array.isArray({})) // false
+*/
+
