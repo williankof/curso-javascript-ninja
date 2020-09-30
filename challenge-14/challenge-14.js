@@ -12,18 +12,11 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    let numberObjects = [
-        {number: 1},
-        {number: 2},
-        {number: 3},
-        {number: 4},
-        {number: 5},
-        {number: 6},
-        {number: 7},
-        {number: 8},
-        {number: 9},
-        {number: 10},
-    ];
+    let numberObjects = [];
+    for(let i = 1; i <= 10; i++) {
+        numberObjects.push({number: i});
+    }
+    console.log(numberObjects)
 
     /*
     Crie um array chamado `justNumbers`, que terá como elementos somente os
@@ -31,11 +24,9 @@
     */
     console.log( '\nJust Numbers:' );
     let justNumbers = numberObjects.map(function(item) {
-        return item['number'];
+        return item.number;
     });
     console.log(justNumbers);
-
-    
 
     /*
     Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
@@ -58,8 +49,7 @@
     */
     console.log( '\nOperation:' );
     let operation = justMod2Or3.reduce(function(acumulado, atual) {
-        return acumulado * atual;
-
+        return (acumulado + 1 ) * atual;
     }, 0);
 
     console.log(operation);
@@ -71,8 +61,8 @@
     */
     console.log( '\nOperation 2:' );
     let operation2 = justMod2Or3.reduceRight(function(acumulado, atual) {
-        return acumulado * atual;
-    });
+        return (acumulado + 1) * atual;
+    }, 0);
 
     console.log(operation2);
 
@@ -85,12 +75,13 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    let name = ['wi', 'lli', 'an']
+    let name = ['wi', 'lli', 'an'];
 
-    let map = name.map(function(item) {
-        return ('p' + item);    
-    });
-    console.log(map.join(''));
+    let reduceP = name.reduce(function(acumulado, atual) {
+        return acumulado + 'P' + atual
+    }, '');
+
+    console.log(reduceP);
 
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
@@ -98,7 +89,7 @@
     */
     console.log( '\nInversed Name:' );
     let inversedName = name.reduceRight(function(acumulado, atual) {
-        return acumulado + ('p'+atual)
+        return acumulado + atual;
     });
     console.log(inversedName);
 
@@ -118,7 +109,8 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    if(numberObjects.indexOf({number: 2})) {
+
+    if(numberObjects.indexOf({number: 2}) > -1) {
         console.log('Existe um objeto { number: 2 } em numberObjects!')
     }
     else {
@@ -130,7 +122,7 @@
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    if(numberObjects.lastIndexOf({number: 2}, 2)) {
+    if(numberObjects.lastIndexOf({number: 2}, 2) -1) {
         console.log('Existe um objeto { number: 2 } em numberObjects!')
     }
     else {
