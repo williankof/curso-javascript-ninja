@@ -34,12 +34,12 @@
 
     this.getAge = function getAge() {
       return this.age;
-    }
+    };
 
-    this.addAge = function addAge(age) {
-      this.age += age
-      return this.age
-    }
+    this.addAge = function addAge() {
+      this.age += arguments[0]
+      return this
+    };
     
   }
 
@@ -81,12 +81,9 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  will.addAge(3);
-  maria.addAge(10);
-  ana.addAge(7);
 
-  console.log(`${will.getFullName()} agora tem ${will.getAge()}`);
-  console.log(`${maria.getFullName()} agora tem ${maria.getAge()}`);
-  console.log(`${ana.getFullName()} agora tem ${ana.getAge()}`);
+  console.log(`${will.getFullName()} agora tem ${will.addAge(3).getAge()}`);
+  console.log(`${maria.getFullName()} agora tem ${maria.addAge(10).getAge()}`);
+  console.log(`${ana.getFullName()} agora tem ${ana.addAge(-7).getAge()}`);
 
 }) ();
