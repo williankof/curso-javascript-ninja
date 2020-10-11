@@ -182,3 +182,9 @@ console.log(Array.isArray(arr)) // true
 console.log(Array.isArray({})) // false
 */
 
+
+
+// object string
+
+console.log('william'.length);
+console.log('william'.charAt(1)); // retorna a letra que pertence ao indice passado
